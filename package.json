@@ -1,19 +1,15 @@
 {
-  "name": "@shopify/prettier-plugin-liquid",
+  "name": "@tomquinonero/prettier-plugin-twig",
   "version": "1.0.0",
-  "description": "Prettier Liquid/HTML plugin by Shopify",
-  "repository": "shopify/prettier-plugin-liquid",
+  "description": "Prettier Twig/HTML plugin by Shopify",
+  "repository": "tomquinonero/prettier-plugin-twig",
   "author": "CP Clermont <@charlespwd>",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "homepage": "https://github.com/shopify/prettier-plugin-liquid#readme",
   "publishConfig": {
     "access": "public",
-    "@shopify:registry": "https://registry.npmjs.org"
-  },
-  "bugs": {
-    "url": "https://github.com/shopify/prettier-plugin-liquid/issues"
+    "@tomquinonero:registry": "https://registry.npmjs.org"
   },
   "files": [
     "grammar/*",
