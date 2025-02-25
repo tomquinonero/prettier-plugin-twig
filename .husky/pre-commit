@@ -11,5 +11,5 @@ ln -s ./prettier2 node_modules/prettier
 # cleanup when done
 trap cleanup EXIT
 
-# pretty-quick on code base
-pretty-quick --staged --pattern 'src/**/*.ts'
+# # pretty-quick on code base
+# pretty-quick --staged --pattern 'src/**/*.ts'
