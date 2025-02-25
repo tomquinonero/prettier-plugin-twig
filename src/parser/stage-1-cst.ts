@@ -229,8 +229,8 @@ export interface ConcreteLiquidTagOpenUnless
     NamedTags.unless,
     ConcreteLiquidCondition[]
   > {}
-export interface ConcreteLiquidTagElsif
-  extends ConcreteLiquidTagNode<NamedTags.elsif, ConcreteLiquidCondition[]> {}
+export interface ConcreteLiquidTagelseif
+  extends ConcreteLiquidTagNode<NamedTags.elseif, ConcreteLiquidCondition[]> {}
 
 export interface ConcreteLiquidCondition
   extends ConcreteBasicNode<ConcreteNodeTypes.Condition> {
@@ -294,7 +294,7 @@ export type ConcreteLiquidTagNamed =
   | ConcreteLiquidTagEcho
   | ConcreteLiquidTagIncrement
   | ConcreteLiquidTagDecrement
-  | ConcreteLiquidTagElsif
+  | ConcreteLiquidTagelseif
   | ConcreteLiquidTagInclude
   | ConcreteLiquidTagLayout
   | ConcreteLiquidTagLiquid
@@ -707,7 +707,7 @@ function toCST<T>(
     liquidTagWhenMarkup: 0,
     liquidTagOpenIf: 0,
     liquidTagOpenUnless: 0,
-    liquidTagElsif: 0,
+    liquidTagelseif: 0,
     liquidTagElse: 0,
     liquidTagOpenConditionalMarkup: 0,
     condition: {

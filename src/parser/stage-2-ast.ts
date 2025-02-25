@@ -272,8 +272,8 @@ export interface LiquidTagTablerow
 export interface LiquidTagIf extends LiquidTagConditional<NamedTags.if> {}
 export interface LiquidTagUnless
   extends LiquidTagConditional<NamedTags.unless> {}
-export interface LiquidBranchElsif
-  extends LiquidBranchNode<NamedTags.elsif, LiquidConditionalExpression> {}
+export interface LiquidBranchelseif
+  extends LiquidBranchNode<NamedTags.elseif, LiquidConditionalExpression> {}
 export interface LiquidTagConditional<Name>
   extends LiquidTagNode<Name, LiquidConditionalExpression> {}
 
@@ -335,12 +335,12 @@ export type LiquidBranch =
   | LiquidBranchUnnamed
   | LiquidBranchBaseCase
   | LiquidBranchNamed;
-export type LiquidBranchNamed = LiquidBranchElsif | LiquidBranchWhen;
+export type LiquidBranchNamed = LiquidBranchelseif | LiquidBranchWhen;
 
 interface LiquidBranchNode<Name, Markup>
   extends ASTNode<NodeTypes.LiquidBranch> {
   /**
-   * e.g. else, elsif, when | null when in the main branch
+   * e.g. else, elseif, when | null when in the main branch
    */
   name: Name;
 
@@ -561,7 +561,7 @@ function isLiquidBranchDisguisedAsTag(
 ): node is LiquidTagBaseCase {
   return (
     node.type === NodeTypes.LiquidTag &&
-    ['else', 'elsif', 'when'].includes(node.name)
+    ['else', 'elseif', 'when'].includes(node.name)
   );
 }
 
@@ -1184,7 +1184,7 @@ function toNamedLiquidTag(
       };
     }
 
-    case NamedTags.elsif: {
+    case NamedTags.elseif: {
       return {
         ...liquidBranchBaseAttributes(node),
         name: node.name,

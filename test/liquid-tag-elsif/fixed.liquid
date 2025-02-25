@@ -37,7 +37,8 @@ printWidth: 1
 It should try to keep comparators on same line
 printWidth: 30
 {% if false %}
-{% elseif lower < some.variable
+{% elseif lower
+    < some.variable
   and some.variable < upper
 %}
   hello
@@ -46,7 +47,8 @@ printWidth: 30
 It should support all kinds of shit
 printWidth: 30
 {% if false %}
-{% elseif lower < some.variable
+{% elseif lower
+    < some.variable
   and some.variable < upper
   and string contains 'hi'
   or string == empty
@@ -59,7 +61,8 @@ printWidth: 30
 It should support all kinds of shit (same but for unless)
 printWidth: 30
 {% unless false %}
-{% elseif lower < some.variable
+{% elseif lower
+    < some.variable
   and some.variable < upper
   and string contains 'hi'
   or string == empty

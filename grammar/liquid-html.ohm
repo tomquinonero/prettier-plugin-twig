@@ -53,7 +53,7 @@ Liquid <: Helpers {
     | liquidTagDecrement
     | liquidTagEcho
     | liquidTagElse
-    | liquidTagElsif
+    | liquidTagelseif
     | liquidTagInclude
     | liquidTagIncrement
     | liquidTagLayout
@@ -156,7 +156,7 @@ Liquid <: Helpers {
 
   liquidTagOpenIf = liquidTagOpenRule<"if", liquidTagOpenConditionalMarkup>
   liquidTagOpenUnless = liquidTagOpenRule<"unless", liquidTagOpenConditionalMarkup>
-  liquidTagElsif = liquidTagRule<"elsif", liquidTagOpenConditionalMarkup>
+  liquidTagelseif = liquidTagRule<"elseif", liquidTagOpenConditionalMarkup>
 
   liquidTagBreak = liquidTagRule<"break", empty>
   liquidTagContinue = liquidTagRule<"continue", empty>
